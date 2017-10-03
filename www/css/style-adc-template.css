@@ -1,0 +1,498 @@
+@charset "UTF-8";
+
+html{
+	font-size: 16px;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: auto;
+}
+
+body{
+	color: #555;
+	font-size: 100%;
+	line-height: 1.5rem;
+	font-family: "微軟正黑體","Microsoft JhengHei","PMingLiU","MingLiU",Arial,Helvetica,sans-serif;
+    background-color: #fcfcfc;
+}
+
+a:hover{
+    color: #08c;
+    text-decoration: underline;
+}
+
+a:focus,
+a:active{
+    text-decoration: none;
+}
+
+/*-----------------------------
+	左側主選單
+-----------------------------*/
+
+.wrapMenu{
+    width: 15%;
+    padding-bottom: 30px !important;
+	background-color: #313131;
+    border-right: 1px solid #333;
+	position: fixed;
+    left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 100;
+}
+
+.wrapMenu .side_title{
+    font-size: 24px;
+    line-height: 1.5rem;
+    margin: 20px 15px 20px;
+    letter-spacing: -.05em;
+}
+
+.wrapMenu ul{
+    position: relative;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.wrapMenu ul:before,
+.wrapMenu ul:after{
+    display: table;
+    content: " ";
+}
+
+.wrapMenu .side_menu > li{
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.wrapMenu .side_menu > li > a{
+    display: block;
+    color: #9e9e9e;
+    font-size: 13px;
+    padding: 13px 15px 15px 16px;
+    text-decoration: none;
+    position: relative;
+}
+
+.wrapMenu .side_menu > li.active > a {
+    color: #777;
+    /*background-color: #414141;
+    box-shadow: rgba(0, 0, 0, .25) 0 1px 0, inset rgba(0, 0, 0, .35) 0 1px 0;*/
+}
+
+/*-----------------------------
+	左側次選單
+-----------------------------*/
+
+.wrapMenu .child_menu{
+    display: none;
+    margin: 5px 0;
+}
+
+.wrapMenu .side_menu > li.active .child_menu{
+    display: block;
+}
+
+.wrapMenu .child_menu > li {
+    padding-left: 30px;
+}
+
+.wrapMenu .child_menu > li.current{
+    background-color: rgba(255, 255, 255, .05);
+}
+
+.wrapMenu .child_menu > li > a {
+    color: #E7E7E7;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    position: relative;
+}
+
+.wrapMenu .child_menu > li a:before {
+    background: #444;
+    bottom: auto;
+    content: "";
+    left: -10px;
+    margin-top: 8px;
+    position: absolute;
+    right: auto;
+    width: 7px;
+    height: 7px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.wrapMenu .child_menu > li a:after {
+    border-left: 1px solid #444;
+    bottom: 0;
+    content: "";
+    left: -7px;
+    position: absolute;
+    top: 0;
+}
+
+.wrapMenu .child_menu > li.current,
+.wrapMenu .child_menu > li:hover{
+    background-color: rgba(255, 255, 255, .05);
+}
+
+.wrapMenu .child_menu > li.current a:before,
+.wrapMenu .child_menu > li:hover a:before{
+    background: #ec971f;
+}
+
+/*-----------------------------
+	右側頂端區
+-----------------------------*/
+
+.wrapToper{
+    position: relative;
+    background-color: #EDEDED;
+    border-bottom: 1px solid #ccc;
+    padding: 30px 30px 20px;
+    height: 20px;
+    float: right;
+    width: 85%;
+}
+
+.wrapToper a.logout{
+    font-size: 13px;
+    padding: 4px 12px;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+
+.wrapToper .logged_user{
+    font-size: 13px;
+    position: absolute;
+    right: 100px;
+    top: 15px;
+}
+
+/*-----------------------------
+    右下功能鍵
+-----------------------------*/
+
+.menu_toggle{
+    display: block;
+    position: fixed;
+    z-index: 100;
+    bottom: 60px;
+    right: 20px;
+}
+
+.menu_toggle:before{
+    font-family: 'FontAwesome';
+    content: "\f0c9";
+    color: #fff;
+    font-size: 18px;
+    background-color: #888;
+    border-radius: 50%;
+    padding: 8px 10px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.menu_toggle:hover{
+    text-decoration: none;
+}
+
+.back_top{
+    display: block;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+}
+
+.back_top:before{
+    font-family: 'FontAwesome';
+    content: "\f077";
+    color: #fff;
+    font-size: 17px;
+    background-color: #888;
+    border-radius: 50%;
+    padding: 6px 9px 10px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.back_top:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+/*-----------------------------
+    右側主標題
+-----------------------------*/
+
+.wrapTitle{
+    font-size: 125%;
+    padding: 1rem 1rem 0.5rem;
+    margin: 10px 0 0;
+    float: right;
+    width: 85%;
+}
+
+.wrapTitle > span,
+.wrapTitle > a{
+    font-size: 15px;
+    color: #999999;
+    position: relative;
+    top: -3px;
+}
+
+.wrapTitle > span:after,
+.wrapTitle > a:after{
+    font-family: 'FontAwesome';
+    content: "\f105";
+    margin: 0 6px;
+}
+
+.wrapTitle > a:hover{
+    text-decoration: none;
+}
+
+/*-----------------------------
+    右側內容區
+-----------------------------*/
+
+.wrapContext{
+    padding: 1rem 1rem 2rem;
+    float: right;
+    width: 85%;
+}
+
+
+/*-----------------------------
+    主選單寬度與收合
+-----------------------------*/
+
+.wrapContainer .wrapMenu{
+    left: 0;
+    transition: left 0.2s linear;
+}
+
+.wrapContainer.switch .wrapMenu{
+    left: -18%;
+}
+
+.wrapContainer .wrapToper,
+.wrapContainer .wrapTitle,
+.wrapContainer .wrapContext{
+    width: 85%;
+    transition: width 0.2s linear;
+}
+
+.wrapContainer.switch .wrapToper,
+.wrapContainer.switch .wrapTitle,
+.wrapContainer.switch .wrapContext{
+    width: 100%;
+}
+
+@media(max-width: 1200px){
+
+    .wrapMenu .side_menu > li > a{
+        font-size: 15px;
+    }
+
+    .wrapContainer .wrapMenu{
+        width: 18%;
+    }
+
+    .wrapContainer .wrapToper,
+    .wrapContainer .wrapTitle,
+    .wrapContainer .wrapContext{
+        width: 82%;
+    }
+
+}
+
+@media(max-width: 1024px){
+
+    .wrapContainer .wrapMenu{
+        min-width: 18%;
+    }
+
+    .wrapContainer .wrapToper,
+    .wrapContainer .wrapTitle,
+    .wrapContainer .wrapContext{
+        min-width: 82%;
+    }
+
+}
+
+
+/*-----------------------------
+    框架配色 style-light
+-----------------------------*/
+
+.style-light .wrapMenu{
+    background-color: #f6fafa;
+    border-right: 1px solid #ddd;
+}
+
+.style-light .wrapMenu .side_menu > li > a{
+    color: #909497;
+    font-size: 13px;
+}
+
+.style-light .wrapMenu .side_menu > li.active > a {
+    background-color: #e5efef;
+    box-shadow: rgba(0, 0, 0, 0) 0 1px 0, inset rgba(0, 0, 0, 0) 0 1px 0;
+}
+
+.style-light .wrapMenu .child_menu > li > a{
+    color: #313131;
+    font-size: 100%;
+}
+
+.style-light .wrapMenu .child_menu > li.current,
+.style-light .wrapMenu .child_menu > li:hover{
+    background-color: rgba(209, 242, 235, 0.7);
+}
+
+.style-light .wrapMenu .child_menu > li a:before {
+    background: #D7DBDD;
+}
+
+.style-light .wrapMenu .child_menu > li.current a:before,
+.style-light .wrapMenu .child_menu > li:hover a:before{
+    background: #1ABC9C;
+}
+
+.style-light .wrapMenu .child_menu > li a:after {
+    border-left: 1px solid #D7DBDD;
+}
+
+.style-light .wrapMenu .child_menu > li.current a:after,
+.style-light .wrapMenu .child_menu > li:hover a:after{
+    border-left: 1px solid #D7DBDD;
+}
+
+.style-light .wrapToper{
+    background-color: rgba(232, 246, 243, 0.2);
+    border-bottom: 1px solid #ddd;
+}
+
+.style-light .wrapToper a.menu_toggle:before{
+    color: #1ABC9C;
+}
+
+
+/*-----------------------------
+    框架配色 style-soft-orange
+-----------------------------*/
+
+.style-soft-orange .wrapMenu{
+    background-color: #c9bb90;
+    border-right: 1px solid #a7a7a7;
+}
+
+.style-soft-orange .wrapMenu .side_menu > li > a{
+    color: #000;
+    font-size: 13px;
+}
+
+.style-soft-orange .wrapMenu .side_menu > li.active > a {
+    background-color: #cfc7a4;
+    box-shadow: rgba(0, 0, 0, 0) 0 1px 0, inset rgba(0, 0, 0, 0) 0 1px 0;
+}
+
+.style-soft-orange .wrapMenu .child_menu > li > a{
+    color: #fff;
+    font-size: 100%;
+}
+
+.style-soft-orange .wrapMenu .child_menu > li.current,
+.style-soft-orange .wrapMenu .child_menu > li:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.style-soft-orange .wrapMenu .child_menu > li.current a,
+.style-soft-orange .wrapMenu .child_menu > li:hover a{
+    color: #000;
+}
+
+.style-soft-orange .wrapMenu .child_menu > li a:before {
+    background: #d7d7d7;
+}
+
+.style-soft-orange .wrapMenu .child_menu > li.current a:before,
+.style-soft-orange .wrapMenu .child_menu > li:hover a:before{
+    background: #c9bb90;
+}
+
+.style-soft-orange .wrapMenu .child_menu > li a:after {
+    border-left-color: #d7d7d7;
+}
+
+.style-soft-orange .wrapToper{
+    background-color: rgba(207, 199, 164, 0.15);
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.style-soft-orange .wrapToper a.menu_toggle:before{
+    color: #c9bb90;
+}
+
+
+
+/*-----------------------------
+    框架配色 style-soft-blue
+-----------------------------*/
+
+.style-soft-blue .wrapMenu{
+    background-color: #9fbec5;
+    border-right: 1px solid #7a969c;
+}
+
+.style-soft-blue .wrapMenu .side_menu > li > a{
+    color: #000;
+    font-size: 13px;
+}
+
+.style-soft-blue .wrapMenu .side_menu > li.active > a {
+    background-color: #adc9cf;
+    box-shadow: rgba(0, 0, 0, 0) 0 1px 0, inset rgba(0, 0, 0, 0) 0 1px 0;
+}
+
+.style-soft-blue .wrapMenu .child_menu > li > a{
+    color: #fff;
+    font-size: 100%;
+}
+
+.style-soft-blue .wrapMenu .child_menu > li.current,
+.style-soft-blue .wrapMenu .child_menu > li:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.style-soft-blue .wrapMenu .child_menu > li.current a,
+.style-soft-blue .wrapMenu .child_menu > li:hover a{
+    color: #000;
+}
+
+.style-soft-blue .wrapMenu .child_menu > li a:before {
+    background: #d7d7d7;
+}
+
+.style-soft-blue .wrapMenu .child_menu > li.current a:before,
+.style-soft-blue .wrapMenu .child_menu > li:hover a:before{
+    background: #9fbec5;
+}
+
+.style-soft-blue .wrapMenu .child_menu > li a:after {
+    border-left-color: #d7d7d7;
+}
+
+.style-soft-blue .wrapToper{
+    background-color: rgba(173, 207, 201, 0.15);
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.style-soft-blue .wrapToper a.menu_toggle:before{
+    color: #9fbec5;
+}

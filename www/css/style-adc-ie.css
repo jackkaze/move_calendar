@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*-----------------------------
+
+For IE css hack
+    margin-top: 10px\9      apply to all ie from 8 and below
+    *margin-top:10px;       apply to ie 7 and below
+    _margin-top:10px;       apply to ie 6 and below
+
+-----------------------------*/
+
+.wrapContainer{
+    _display: none;
+}
+
+.wrapContainer .wrapToper,
+.wrapContainer .wrapTitle,
+.wrapContainer .wrapContext{
+    padding-right: 40px\9;
+    *padding-right: 40px;
+}
+
+.wrapContainer .wrapToper .logout{
+    right: 40px\9;
+    *right: 40px;
+}
+
+.wrapContainer .wrapToper .logged_user{
+    right: 140px\9;
+    *right: 140px;
+}
+
+.checkbox input[type="checkbox"]{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/*-----------------------------
+    IE10+ CSS styles
+-----------------------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .wrapContainer .wrapToper,
+    .wrapContainer .wrapTitle,
+    .wrapContainer .wrapContext{
+        padding-right: 40px;
+    }
+
+    .wrapContainer .wrapToper .logout{
+        right: 40px;
+    }
+
+    .wrapContainer .wrapToper .logged_user{
+        right: 140px;
+    }
+
+}
+
+
+/*-----------------------------
+    IE Edge 12+ CSS styles
+-----------------------------*/
+@supports (-ms-accelerator:true) {
+
+}
